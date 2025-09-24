@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "header-font";
+    src: url("/fonts/greatertheory.otf");
+}
+
+@font-face {
+    font-family: "nav-font";
+    src: url("/fonts/IBMPlexMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: "body-font";
+    src: url("/fonts/Frutiger.ttf");
+}
+
+@theme {
+    --font-nav-font: "nav-font";
+    --font-header-font: "header-font";
+    --font-body-font: "body-font";
+}
+
+.static-bg {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    isolation: isolate;
+}
+
+.static-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/background.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    opacity: 0.6;
+    z-index: -1;
+}

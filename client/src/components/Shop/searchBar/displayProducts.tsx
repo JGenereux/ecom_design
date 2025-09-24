@@ -10,6 +10,7 @@ export default function DisplayProducts({ query, category }: { query: string, ca
             items?.style.setProperty('filter', 'none')
         }
     }, [])
+    console.log(query, category)
     const products = [
         { name: "Product 1", price: 100, category: "Category", image: "/tshirt.jpg" },
         { name: "Product 2", price: 200, category: "Category", image: "/tshirt.jpg" },

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import SearchBar from "../Shop/searchBar/searchBar"
 import { useState } from "react"
 

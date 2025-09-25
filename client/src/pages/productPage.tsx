@@ -11,7 +11,7 @@ export default function ProductPage() {
         name: productName || "",
         price: 100,
         category: "Tees",
-        image: "/tshirt.jpg",
+        image: "/tshirt.png",
         sizes: ["S", "M", "L", "XL"],
         colors: ["Red", "Black", "Green"]
     }

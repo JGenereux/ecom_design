@@ -12,9 +12,9 @@ export default function DisplayProducts({ query, category }: { query: string, ca
     }, [])
     console.log(query, category)
     const products = [
-        { name: "Product 1", price: 100, category: "Category", image: "/tshirt.jpg" },
-        { name: "Product 2", price: 200, category: "Category", image: "/tshirt.jpg" },
-        { name: "Product 3", price: 300, category: "Category", image: "/tshirt.jpg" },
+        { name: "Product 1", price: 100, category: "Category", image: "/tshirt.png" },
+        { name: "Product 2", price: 200, category: "Category", image: "/tshirt.png" },
+        { name: "Product 3", price: 300, category: "Category", image: "/tshirt.png" },
     ]
 
     return <div className="flex flex-row gap-4 absolute z-50 top-10">

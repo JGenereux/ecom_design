@@ -43,3 +43,12 @@
     opacity: 0.6;
     z-index: -1;
 }
+
+.month-grid {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(5, 1fr);
+    background: #fff;
+    grid-gap: 2px;
+    min-height: 0;  /* NEW */
+    min-width: 0;   /* NEW; needed for Firefox */
+}

@@ -6,12 +6,12 @@ export default function ProductCard({ product, variant }: { product: { name: str
 
     return <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} onClick={() => navigate(`/shop/${product.name}`)}
         className={variant === 'default' ?
-            "flex flex-col rounded-sm shadow-md shadow-black justify-center w-fit gap-1 pb-2 bg-white cursor-pointer"
+            "flex flex-col rounded-sm justify-center w-fit gap-1 pb-2 cursor-pointer"
             :
             "flex flex-col rounded-sm border-2 border-black shadow-md shadow-black justify-center w-fit gap-1 pb-2 bg-white cursor-pointer"
         }>
-        <img src={product.image} alt={product.name} className={variant === 'default' ? 'w-full h-92 object-contain' : 'w-full h-72 object-contain'} />
-        <div className="flex flex-col font-body-font">
+        <img src={product.image} alt={product.name} className={variant === 'default' ? 'w-full h-72 object-contain' : 'w-96 h-72 object-contain'} />
+        <div className="flex flex-col font-body-font text-center">
             <p className="text-lg text-gray-500 px-4">{product.category}</p>
             <div className="flex flex-col px-4 text-xl">
                 <p>{product.name}</p>

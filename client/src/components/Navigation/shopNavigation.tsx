@@ -31,16 +31,16 @@ export default function ShopNavigation() {
             </div>
 
             <div className="flex flex-col">
-                {shopLinks?.map((link) => {
-                    return <button className={`font-nav-font text-lg hover:underline text-start cursor-pointer`} onClick={() => setActiveLink(link)}>{link.name}</button>
+                {shopLinks?.map((link, i) => {
+                    return <button key={i} className={`font-nav-font text-lg hover:underline text-start cursor-pointer`} onClick={() => setActiveLink(link)}>{link.name}</button>
                 })}
             </div>
 
         </div> :
             <div className="flex flex-row gap-8">
                 <div className="flex flex-col">
-                    {shopLinks?.map((link) => {
-                        return <button className={`font-nav-font text-2xl hover:underline text-start cursor-pointer`} onClick={() => setActiveLink(link)}>{link.name}</button>
+                    {shopLinks?.map((link, i) => {
+                        return <button key={i} className={`font-nav-font text-2xl hover:underline text-start cursor-pointer`} onClick={() => setActiveLink(link)}>{link.name}</button>
                     })}
                 </div>
 

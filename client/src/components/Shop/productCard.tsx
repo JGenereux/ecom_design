@@ -1,10 +1,39 @@
 import { useNavigate } from "react-router-dom"
 import { motion } from "motion/react"
+import { useState, useEffect, useRef } from "react"
 
-export default function ProductCard({ product, variant }: { product: { name: string, price: number, category: string, image: string }, variant: 'default' | 'search' }) {
+export default function ProductCard({ product, variant, itemsRef }: { product: { name: string, price: number, category: string, image: string }, variant: 'default' | 'search', itemsRef?: React.RefObject<HTMLDivElement | null> }) {
     const navigate = useNavigate()
 
-    return <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} onClick={() => navigate(`/shop/${product.name}`)}
+    const [hovered, setHovered] = useState(false)
+    const currentProductRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        if (hovered && itemsRef && currentProductRef.current) {
+            for (const child of itemsRef.current?.children || []) {
+                if (child === currentProductRef.current) {
+                    continue
+                }
+                if (child instanceof HTMLDivElement) {
+                    child.style.setProperty('filter', 'blur(2px)')
+                }
+            }
+        }
+
+        return () => {
+            for (const child of itemsRef?.current?.children || []) {
+                if (child instanceof HTMLDivElement) {
+                    child.style.setProperty('filter', 'none')
+                }
+            }
+        }
+    }, [hovered])
+
+    return <motion.div ref={currentProductRef} onClick={() => navigate(`/shop/${product.name}`)}
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+        whileHover={{ scale: 1.10, transition: { duration: 0.3 } }}
+        transition={{ duration: 0.2 }}
         className={variant === 'default' ?
             "flex flex-col rounded-sm justify-center w-fit gap-1 pb-2 cursor-pointer"
             :

@@ -10,7 +10,6 @@ export default function ShopNavigation() {
     ]
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < 640)
-    const [activeLink, setActiveLink] = useState(shopLinks[0])
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -32,7 +31,7 @@ export default function ShopNavigation() {
 
             <div className="flex flex-col">
                 {shopLinks?.map((link, i) => {
-                    return <button key={i} className={`font-nav-font text-lg hover:underline text-start cursor-pointer`} onClick={() => setActiveLink(link)}>{link.name}</button>
+                    return <button key={i} className={`font-nav-font text-lg hover:underline text-start cursor-pointer`}>{link.name}</button>
                 })}
             </div>
 
@@ -40,7 +39,7 @@ export default function ShopNavigation() {
             <div className="flex flex-row gap-8">
                 <div className="flex flex-col">
                     {shopLinks?.map((link, i) => {
-                        return <button key={i} className={`font-nav-font text-2xl hover:underline text-start cursor-pointer`} onClick={() => setActiveLink(link)}>{link.name}</button>
+                        return <button key={i} className={`font-nav-font text-2xl hover:underline text-start cursor-pointer`}>{link.name}</button>
                     })}
                 </div>
 

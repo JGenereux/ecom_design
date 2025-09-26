@@ -25,7 +25,7 @@ export default function HomeNavigation() {
 
                     for (const child of scope.current.children) {
                         if (child instanceof HTMLAnchorElement) {
-                            await animate(child, { opacity: [0, 1], x: [-100, 0] }, { duration: 0.35 })
+                            await animate(child, { opacity: [0, 1], x: [-100, 0] }, { duration: 0.3 })
                         }
                     }
                 }
